@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import CryptoList from './components/CryptoList';
+import Home from './components/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,8 +20,22 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+
+    <BrowserRouter>
+      <div>
+        <Link to="/">Home</Link>{' '}
+        &nbsp;|&nbsp;&nbsp;
+        <Link to="/cryptos">Cryptocurrency List</Link>{' '}
+        <Routes>
+          <Route path="/" component={Home}/>
+          <Route path="/cryptos" element={<CryptoList />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
     </div>
+    
+
   );
 }
 
