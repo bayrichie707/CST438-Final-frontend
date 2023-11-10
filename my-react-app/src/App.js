@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 import CryptoList from './components/CryptoList';
 import Home from './components/Home';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -22,18 +23,27 @@ function App() {
         </a>
       </header> */}
 
-    <BrowserRouter>
-      <div>
-        <Link to="/">Home</Link>{' '}
-        &nbsp;|&nbsp;&nbsp;
-        <Link to="/cryptos">Cryptocurrency List</Link>{' '}
-        <Routes>
-          <Route path="/" component={Home}/>
-          <Route path="/cryptos" element={<CryptoList />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div>
+          <Link to="/">Home</Link>{' '}
+          &nbsp;|&nbsp;&nbsp;
+          <Link to="/cryptos">Cryptocurrency List</Link>{' '}
+          &nbsp; |&nbsp;&nbsp;
+          <Link to="/login">Login</Link>{' '}
+          <Routes>
+            <Route path="/" component={Home}/>
+            <Route path="/cryptos" element={<CryptoList />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+      {/* <div>
+        <Login />
+      </div> */}
     </div>
+
+    
+
     
 
   );
