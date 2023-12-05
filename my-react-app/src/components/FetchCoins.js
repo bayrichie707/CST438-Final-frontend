@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link, Route, Routes, useParams, useMatch } from 'react-router-dom';
 import '../fetchCoins.css';
-import CoinDetails from './CoinDetails';
+
 
 function FetchCoins() {
     const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ function FetchCoins() {
         .then((data) => {
           setData(data);
           setLoading(false);
-          console.log(JSON.stringify(data));
+          // console.log(JSON.stringify(data));
         })
         .catch((error) => {
           console.error('Error fetching data:', error);
@@ -51,8 +51,7 @@ function FetchCoins() {
                 </td>
                 <td>{coin.market_cap_rank}</td>
                 <td>
-                  {/* <Link to={`${url}/coin/${coin.id}`} style={{ textDecoration: 'underline' }}> */}
-                  <Link to={`https://api.coingecko.com/api/v3/coins/${coin.id}`} style={{ textDecoration: 'underline' }}>
+                  <Link to={`/coin/${coin.id}`} style={{ textDecoration: 'underline' }}>
                     {coin.name}
                   </Link>
                 </td>
@@ -66,8 +65,8 @@ function FetchCoins() {
           </tbody>
         </table>
         <Routes>
-          {/* <Route path={`${path}/coin/:coinId`}>
-            <CoinDetails />
+          {/* <Route path={"/coin/:coinId"} element={<CoinDetails />}>
+            // <CoinDetails />
           </Route> */}
         </Routes></>
           

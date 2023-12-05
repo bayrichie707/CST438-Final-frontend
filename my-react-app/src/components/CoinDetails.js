@@ -1,9 +1,14 @@
 // CoinDetails.js
 import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import '../CoinDetails.css';
 
-function CoinDetails({ coinId }) {
+function CoinDetails() {
   const [coinDetails, setCoinDetails] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const { coinId } = useParams();
+  
 
   useEffect(() => {
     // Fetch detailed data for the selected coin
@@ -27,8 +32,10 @@ function CoinDetails({ coinId }) {
       ) : (
         <div>
           <h2>{coinDetails.name} ({coinDetails.symbol})</h2>
-          <p>Description: {coinDetails.description?.en || 'N/A'}</p>
-          <p>Market Cap: ${coinDetails.market_data?.marketcap?.usd || 'N/A'}</p>
+          <p className="description">Description: {coinDetails.description?.en || 'N/A'}</p>
+          <p><strong>Market Cap:</strong> ${coinDetails.market_data?.market_cap?.usd || 'N/A'}</p>
+          <p><strong>All Time High:</strong> ${coinDetails.market_data?.ath?.usd}</p>
+          <p><strong>Homepage:</strong> <Link to={coinDetails.links?.homepage}>{coinDetails.links?.homepage}</Link></p>
           {/* Add more details as needed */}
         </div>
       )}
