@@ -35,7 +35,7 @@ function CoinDetails() {
           <p className="description">Description: {coinDetails.description?.en || 'N/A'}</p>
           <p><strong>Market Cap:</strong> ${coinDetails.market_data?.market_cap?.usd || 'N/A'}</p>
           <p><strong>All Time High:</strong> ${coinDetails.market_data?.ath?.usd}</p>
-          <p><strong>Homepage:</strong> <Link to={coinDetails.links?.homepage}>{coinDetails.links?.homepage}</Link></p>
+          <p><strong>Homepage:</strong> <a href={coinDetails.links?.homepage[0]}>{coinDetails.links?.homepage}</a></p>
           {/* Add more details as needed */}
         </div>
       )}
