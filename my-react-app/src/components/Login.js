@@ -1,6 +1,6 @@
 // src/components/Login.js
 import React, { useState } from 'react';
-import '../Login.css';
+import '../css/Login.css';
 
 function Login() {
   const [username, setUsername] = useState('');

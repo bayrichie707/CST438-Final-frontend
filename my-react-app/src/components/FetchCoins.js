@@ -26,7 +26,7 @@ function FetchCoins() {
 
     return (
       <div>
-        <h2>Data from API</h2>
+        <h2>Today's Cryptocurrency Prices by Marketcap</h2>
         {loading ? (
           <p>Loading...</p>
         ) : (

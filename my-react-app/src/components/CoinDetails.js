@@ -1,7 +1,7 @@
 // CoinDetails.js
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import '../CoinDetails.css';
+import '../css/CoinDetails.css';
 
 function CoinDetails() {
   const [coinDetails, setCoinDetails] = useState({});
