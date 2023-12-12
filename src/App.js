@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import CoinDetails from './components/CoinDetails';
 import NavBar from './components/Navbar';
+import RandomCoin from './components/RandomCoin';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/cryptos/*" element={<CryptoList />} />
             <Route path="/login" element={<Login />} />
             <Route path="/coin/:coinId" element={<CoinDetails />} />
+            <Route path="/randomCoin" element={<RandomCoin />} />
           </Routes>
         </div>
       </BrowserRouter>

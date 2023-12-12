@@ -25,6 +25,9 @@ const NavBar = () => {
           <LinkContainer to="/cryptos">
             <Nav.Link>Cryptocurrency List</Nav.Link>
           </LinkContainer>
+          <LinkContainer to="/randomCoin">
+            <Nav.Link>Random Coin</Nav.Link>
+          </LinkContainer>
           {isLoggedIn ? (
             <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
           ) : (
